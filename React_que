@@ -1,0 +1,74 @@
+#  Can we write code without JSX?
+   Yes we can write a code  without JSX.
+   JSX element is just syntactic sugar for calling React.createElement(component, props, ...children). 
+
+#  What is the benefit of writing ReactJs code with JSX?
+   Jsx help us to keeping code simple and elegant when we write large piece of code.
+   It's provied easy way to write a code as compair to js.
+   Jsx allow react to show more useful error and warning messages.
+   If developer is familer with HTML, it is easy to use Jsx while building react application.
+   It is faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+
+#  Does Browser understand JSX?
+   No browser dosen't understand jsx.
+   Browsers cannot read JSX because there is no inherent implementation for the browser engines to read and understand it. We need transpilers (a compiler that translates one form of syntax into another) like Babel or TypeScript to compile JSX into a browser-compatible version. This occurs during the build process, so the browser will never know JSX was present in the first place.
+
+# What would happen if we directly run JSX in Browser?
+   If we directly run JSX in Browser than we can see blank screen because browser couldn't understand jsx.
+
+# What is state and why do we use it?
+   The state is an instance of React Component Class can be defined as an object of a set of observable properties that control the behavior of the component. The State of a component is an object that holds some information that may change over the lifetime of the component.
+   For example : We want to create a survery form every time userdata fill the form data varry. For that we can use state to set state.
+
+#  Can we directly modify or update sWhat is the use of state variables? Can’t we use normal variables?
+
+# Can anyone update the state variable?
+   Yes we can update state variable.
+
+#  Are props mutable?
+   Props are used to pass data from parent to child or by the component itself. They are immutable and thus will not be changed. State is used for mutable data, or data that will change
+
+# What can we pass in Props?(object, Components, string, functions)
+    Yes we can pass props as object, string, function, Components.
+
+# What is the use of state variables? Can’t we use normal variables?
+    we can use variable but in that case we will not be able to update data for specific variable. Instead of that if we use state it allow us to update data.
+
+# What is the use of props?
+    “Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another. Furthermore, props data is read-only, which means that data coming from the parent should not be changed by child components.
+
+# Is there any other way of passing data between components?
+    yes by using context.provider e can pass state from parent component to child and get data in child component using context.consumer.
+
+# When to use functional Components?
+    A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element. There is no render method used in functional components.Stateless components as they simply accept data and display them in some form, that they are mainly responsible for rendering UI. In funcational component we cannot use componentDidMount. Hooks can be easily used in functional components.
+
+#  Are there any advantages or disadvantages of using functional components?
+    Advantage:Functional components are easier to read, debug, and test. They offer performance benefits, decreased coupling, and greater reusability.
+    Disadvantage: 
+    Disadvantage: It does not support life cycle method compoundDidMount and also it is stateless.
+
+#  What are the lifecycle methods of class components and in which order are they called?
+    These methods are called “lifecycle methods”.
+    1. componentDidMount()
+    
+    2. componentWillUnmount()
+
+    The componentDidMount() method runs after the component output has been rendered to the DOM.
+    We want to set up a timer whenever the Clock is rendered to the DOM for the first time. This is called “mounting” in React.
+    We also want to clear that timer whenever the DOM produced by the Clock is removed. This is called “unmounting” in React.
+
+
+#  What are keys and why do we use them in lists? 
+    A “key” is a special string attribute you need to include when creating lists of elements. To give a unique identity to every element inside the array, a key is required.
+
+#  Why does React maintain a Virtual DOM?
+    React keeps a light weight representation of the real DOM known as Virtual DOM manipulating Reacl Dom is much slower process than manipulating virtual Dom. When the State
+    changes virtual Dom change only that object in the real dom instead of updateing all the object.
+
+
+    The DOM is represented as a tree data structure. Because of that, the changes and updates to the DOM are fast. But after the change, the updated element and it’s children have to be re-rendered to update the application UI. The re-rendering or re-painting of the UI is what makes it slow. 
+    Virtual DOM comes in and performs significantly better than the real DOM. The virtual DOM is only a virtual representation of the DOM. Everytime the state of our application changes, the virtual DOM gets updated instead of the real DOM.
+    A virtual DOM, which is represented as a tree is created. Each element is a node on this tree. If the state of any of these elements changes, a new virtual DOM tree is created. This tree is then compared or “diffed” with the previous virtual DOM tree.
+
+    

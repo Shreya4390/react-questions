@@ -1,0 +1,91 @@
+
+
+   # Should you keep all component states in the Redux store?
+      We can store all component state in redux store, but before that developer should gather the requirement what the actual need to make application effective and worthy. I would prefer to use store only when component state in redux required to access data in multiple part of application like userdata also i'll check data requirement should be same in each component. Other case when data is required to manage only in between few component then i would prefer to use react usestate.It will also help to  write less complex code.
+
+
+   # Explain Redux in your own words
+
+      React is a predictable state container designed to write js app. It behave consistently across client, server and easy to test.
+
+      Redux is mostly used as a state management tool  it takes control of state away from React components and gives it to a centralised place called a ‘store’.By using redux we can manage application state in a single place and keep changes in  app more predictable and traceable. And each component in the tree can access it.
+
+
+   # What are reducers and actions?
+
+      Reducer: A reducer is a function that determines changes to an application's state. It uses the action it receives to determine this change.
+
+      Example:   const reducer = (state = 0, action) => {
+                      if (action.type === 'INCREMENT') {
+                        return state + action.payload;
+                      } else if (action.type === 'DECREMENT') {
+                        return state - action.payload;
+                      }
+                    };
+         
+      Actions: Actions are the only source of information for the store as per Redux official documentation. It carries a payload of information from your application to store.Actions are plain JavaScript object that must have a type attribute to indicate the type of action performed. It tells us what had happened. Types should be defined as string.
+
+      Example:  { type: GET_Add, payload: 1 }
+    
+   # Why should a reducer return a new state object?
+     They should only calculate the new state value based on the state and action arguments
+     They are not allowed to modify the existing state. Instead, they must make immutable updates, by copying the existing state and making changes to the copied values.
+
+     If we mutate original state:
+     There are several reasons why you must not mutate state in Redux:
+
+         It causes bugs, such as the UI not updating properly to show the latest values
+         It makes it harder to understand why and how the state has been updated
+         It makes it harder to write tests
+         It breaks the ability to use "time-travel debugging" correctly
+         It goes against the intended spirit and usage patterns for Redux
+     
+   # When an action is dispatched, are all the reducers called?
+
+      Yes all the reducers will get called when you dispatch the action. Because every reducer returns default state if the action isn't found you get your initial state set up with a single action.
+
+   # What are the core principles of Redux?
+      The three core principle of redux are:
+      1. Single source of truth​: 
+          ----------------------
+
+          This makes it easy to create universal apps, as the state from your server can be serialized and hydrated into the client with no extra coding effort. A single state tree also makes it easier to debug or inspect an application; it also enables you to persist your app's state in development, for a faster development cycle.
+
+
+      2. State is read-only: 
+         -------------------
+
+          This ensures that neither the views nor the network callbacks will ever write directly to the state. Instead, they express an intent to transform the state. Because all changes are centralized and happen one by one in a strict order, there are no subtle race conditions to watch out for. As actions are just plain objects, they can be logged, serialized, stored, and later replayed for debugging or testing purposes.
+
+         store.dispatch({
+          type: 'INCREMENT',
+          index: 1
+        })
+
+      3. Changes are made with pure functions: 
+         -------------------------------------                                   
+
+         Reducers are just pure functions that take the previous state and an action, and return the next state. Remember to return new state objects, instead of mutating the previous state. You can start with a single reducer, and as your app grows, split it off into smaller reducers that manage specific parts of the state tree. Because reducers are just functions, you can control the order in which they are called, pass additional data, or even make reusable reducers for common tasks such as pagination.
+
+   # Why should you use redux in your app?
+
+      1.  If you have large amounts of application state that are needed in many places in the app.
+      2.  The app state is updated frequently.
+      3.  The logic to update that state may be complex.
+      4.  The app has a medium or large-sized codebase, and might be worked on by many people
+      5.  You need to see how that state is being updated over timefxcbcvbv
+         
+   # How Redux Works - Redux Workflow?
+
+       UI     =>               Actions    =>          Reducer               =>    Store                               =>    State
+        |                        |                     |                           |                                          |
+      (Trigger)                 (Sent to)             (Update)                    (Contains)                                (Define)
+      This is where             The actual            This specify                The store brings everything                It is an object that represents 
+      a changes is              action we             how application's           together.                                  the dynamic parts  of the app:  
+      triggered.                want to take          state should change         There are three methods:                   anything that may change on the 
+      For ex:                   place. Action         response to each            1. getState()                              client-side.
+      (e.g. 'Button click ).    type must have        actions.                    2. dispatch(action) 
+                                property.                                         3. subscribe(listener)
+                                (e.g. 'ADD_ONE' ).
+    
+

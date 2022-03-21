@@ -1,0 +1,82 @@
+ReactJS Interview Questions
+
+1. Tell me about yourself
+2. Write a code to fetch data from an API and render it in a table (plain html and js)
+   # Check Employee html
+3. Write the same code and render it in React
+   # Check folder home/work/training/react/react-app(using fetch method)
+4. What is arrow function
+   #  Arrow function
+     Arrow functions have a few important distinctions in how they work that distinguish them from traditional functions, as well as a few syntactic enhancements. 
+     The biggest functional differences are that arrow functions do not have their own this binding or prototype and cannot be used as a constructor. Arrow functions 
+     can also be written as a more compact alternative to traditional functions, as they grant the ability to omit parentheses around parameters and add the concept 
+     of a concise function body with implicit return.
+     const sum = (a, b) => a + b
+5. What is useMemo
+   what is useRef
+   what is context
+   What is event capturing
+   What is event bubbling
+   What is iFrame
+   What is window
+   How can you access the window of parent from inside of an iFrame
+   What is key while rendering a list of elements
+   What is redux thunk
+
+   Write a function to handle the click of the button in a react component
+   Write the code for implementing context api
+   Write inline css for a particular component
+   Difference between display:inline vs display:flex
+   Different types of display property
+
+console.log(1)
+setTimeout(() => {
+console.log(2)
+})
+console.log(3)
+
+iife function
+bind in js
+write the inline css
+what is react its advantages and disadvantages
+what are the challenges you have faced in react till now
+what are the new things / libraries you have explored in react
+explain class and functional component
+component life cycle
+what is react hook
+how component life cycle method use in functional component
+diff controlled component and uncontrolled component
+what is reconciliation
+how many virtual dom react manage
+what are the ui libraries you have worked
+what is useLayoutEffect and why and where you can use it
+what is pure function and real time use
+what is useMemo
+diff b/w virtual dom and real dom
+what kind of data binding react follows
+what is unidirectional data binding
+have you used context api
+how you manage authentication
+how you manage user session in functional component
+what is error boundaries have you used what are the ways you can do it
+what is proptypes
+write a component logic that will call api until it receives data at max 5 times else it will show data not found using axios
+
+https://codesandbox.io/s/eloquent-maxwell-wv1kr
+https://codesandbox.io/s/misty-waterfall-colh8
+
+Loconav interview:
+
+1. Why use react, why is it so popular?
+2. Dom vs Virtual Dom?
+3. Lifecycle methods class and functional
+4. What's the hook, which hooks have you used?
+5. Closure
+6. Hoisting
+7. Coding exercise: We have two components: pass a int number as prop from one component and draw an inline number of circles from another component.
+8. How can you optimise the code and site?
+   #Make a component to render 5 circles one by one
+   #Make 5 more circles mark them as unselected
+   #Make changes on mouse event i.e onMouseOver, onCliclk, onMouseLeave
+   #onMouseOver should make all circles as selected to that circle and onMouseLeave should reset the pervious value and onClick it persist the circle index which clicked
+   #Should apply className ristriction if its a child of a particular parent it should apply
